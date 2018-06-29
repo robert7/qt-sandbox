@@ -1,2 +1,2 @@
 # qt-sandbox
-Qt playground - ~private introductory experiments with Qt framwwork
+Qt playground - introductory experiments with Qt framwwork
