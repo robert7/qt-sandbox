@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=My Example Program
+Comment=This is comment to my example program
+Exec=myprog
+Icon=myprog
+Categories=Office;

@@ -1,8 +1,10 @@
+message("Out path: $${OUT_PWD}")
+
 QT += core gui
 QT += widgets
 
 
-TARGET = 01-build-system
+TARGET = myprog
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -23,3 +25,23 @@ SOURCES += \
 
 HEADERS += \
         colormenu.h
+
+
+# target AppDir
+APPDIR_BASE=AppDir/usr
+
+images.path = $$APPDIR_BASE/share/$$TARGET/images
+images.files = images/*
+
+icons.path = $$APPDIR_BASE/share/icons/hicolor/256x256/apps/$$TARGET.png
+icons.files = images/icon.png
+
+binary.path = $$APPDIR_BASE/bin
+binary.files = $${OUT_PWD}/$${TARGET}*
+message("Target binary: $${binary.files}")
+
+
+desktop.path = $$APPDIR_BASE/share/applications
+desktop.files = $${TARGET}.desktop
+
+INSTALLS += images icons binary desktop

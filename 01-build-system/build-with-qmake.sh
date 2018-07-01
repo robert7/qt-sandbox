@@ -20,7 +20,7 @@ cd ${BUILD_DIR}
 
 
 
-${QMAKE_BINARY} CONFIG+=debug .. && make
+${QMAKE_BINARY} CONFIG+=debug .. && make && make install
 
 ## add AppImage build
 ##&& linuxdeployqt nixnote2 -qmake=$QMAKE -appimage

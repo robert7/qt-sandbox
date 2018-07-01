@@ -55,8 +55,8 @@ Makefile.Release
 .cproject
 .settings
 
-build/
 cmake-build-debug/
+qmake-build-debug/
 
 # idea
 .idea/workspace.xml
@@ -68,4 +68,6 @@ cmake-build-debug/
 # QMake file
 .qmake.stash
 
-
+# AppDir for AppImage
+AppDir
+AppRun
