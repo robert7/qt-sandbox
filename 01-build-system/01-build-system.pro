@@ -28,13 +28,16 @@ HEADERS += \
 
 
 # target AppDir
-APPDIR_BASE=AppDir/usr
+APPDIR_BASE=appdir/usr
 
 images.path = $$APPDIR_BASE/share/$$TARGET/images
 images.files = images/*
 
-icons.path = $$APPDIR_BASE/share/icons/hicolor/256x256/apps/$$TARGET.png
-icons.files = images/icon.png
+icons.path = $$APPDIR_BASE/share/icons/hicolor/256x256/apps
+icons.files = images/$${TARGET}.png
+
+#icons2.path = appdir/$${TARGET}.png
+#icons2.files = images/$${TARGET}.png
 
 binary.path = $$APPDIR_BASE/bin
 binary.files = $${OUT_PWD}/$${TARGET}*

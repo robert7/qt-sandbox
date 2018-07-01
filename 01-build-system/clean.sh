@@ -1,7 +1,7 @@
 #!/bin/bash
 BUILD_DIR1=qmake-build-debug
 BUILD_DIR2=cmake-build-debug
-BUILD_DIR3=AppDir
+BUILD_DIR3=appdir
 set -e
 
 if [ -d ${BUILD_DIR1} ]; then

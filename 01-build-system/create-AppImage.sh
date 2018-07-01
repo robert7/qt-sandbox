@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROG=myprog
-DESKTOP_FILE=AppDir/usr/share/applications/${PROG}.desktop
+DESKTOP_FILE=appdir/usr/share/applications/${PROG}.desktop
 
 QT_DIR=${1}
 QMAKE_BINARY=${QT_DIR}/bin/qmake
@@ -18,5 +18,12 @@ if [ ! -f "$DESKTOP_FILE" ]; then
     exit 1
 fi
 
-echo About to run: linuxdeployqt $DESKTOP_FILE -qmake=${QMAKE_BINARY} -appimage
-linuxdeployqt $DESKTOP_FILE -qmake=${QMAKE_BINARY} -appimage
+
+
+CMD="linuxdeployqt $DESKTOP_FILE -qmake=${QMAKE_BINARY} -bundle-non-qt-libs"
+echo About to run: $CMD
+$CMD
+
+CMD="linuxdeployqt $DESKTOP_FILE -qmake=${QMAKE_BINARY} -appimage"
+echo About to run: $CMD
+$CMD
