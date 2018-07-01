@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=My Prog
-Comment=This is comment to my example program
+Name=myprog
+Comment=Sample Qt program
 Exec=myprog
 Icon=myprog
 Categories=Office;
