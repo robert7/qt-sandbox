@@ -14,4 +14,6 @@ if [ -d ${BUILD_DIR3} ]; then
   rm -rf ${BUILD_DIR3}
 fi
 
+rm *.AppImage myprog
+
 echo OK

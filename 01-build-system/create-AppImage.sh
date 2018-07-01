@@ -18,7 +18,7 @@ if [ ! -f "$DESKTOP_FILE" ]; then
     exit 1
 fi
 
-
+export VERSION=$(git rev-parse --short HEAD)
 
 CMD="linuxdeployqt $DESKTOP_FILE -qmake=${QMAKE_BINARY} -bundle-non-qt-libs"
 echo About to run: $CMD

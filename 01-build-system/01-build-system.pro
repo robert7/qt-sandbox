@@ -47,7 +47,6 @@ binary.path = $$APPDIR_BASE/bin
 binary.files = $${OUT_PWD}/$${TARGET}
 message("Target binary: $${binary.files}")
 
-
 desktop.path = $$APPDIR_BASE/share/applications
 desktop.files = $${TARGET}.desktop
 
