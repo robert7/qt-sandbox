@@ -22,6 +22,8 @@ fi
 
 
 cd ${BUILD_DIR}
+CMAKE_PREFIX_PATH=${QT_DIR}
+export CMAKE_PREFIX_PATH
 cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" .. && make
 
 
