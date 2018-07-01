@@ -1,6 +1,7 @@
 #!/bin/bash
 QT_DIR=${1}
 BUILD_DIR=qmake-build-debug
+APPDIR=appdir
 QMAKE_BINARY=${QT_DIR}/bin/qmake
 
 if [ -z ${QT_DIR} ]; then
@@ -13,14 +14,17 @@ if [ ! -f "${QMAKE_BINARY}" ]; then
     exit 1
 fi
 
-if [ ! -d "${BUILD_DIR}" ]; then
-  mkdir ${BUILD_DIR}
+if [ -d "${BUILD_DIR}" ]; then
+  rm -rf ${BUILD_DIR}
 fi
-cd ${BUILD_DIR}
+if [ -d "${APPDIR}" ]; then
+  rm -rf ${APPDIR}
+fi
+
+mkdir ${BUILD_DIR}
 
 
+${QMAKE_BINARY} CONFIG+=debug && make
 
-${QMAKE_BINARY} CONFIG+=debug .. && make && make install
-
-## add AppImage build
-##&& linuxdeployqt nixnote2 -qmake=$QMAKE -appimage
+${QMAKE_BINARY} CONFIG+=debug
+make install

@@ -26,6 +26,10 @@ SOURCES += \
 HEADERS += \
         colormenu.h
 
+CONFIG(debug, debug|release) {
+        OBJECTS_DIR = qmake-build-debug
+        MOC_DIR = qmake-build-debug
+}
 
 # target AppDir
 APPDIR_BASE=appdir/usr
@@ -40,7 +44,7 @@ icons.files = images/$${TARGET}.png
 #icons2.files = images/$${TARGET}.png
 
 binary.path = $$APPDIR_BASE/bin
-binary.files = $${OUT_PWD}/$${TARGET}*
+binary.files = $${OUT_PWD}/$${TARGET}
 message("Target binary: $${binary.files}")
 
 

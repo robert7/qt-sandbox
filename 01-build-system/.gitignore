@@ -68,6 +68,10 @@ qmake-build-debug/
 # QMake file
 .qmake.stash
 
-# AppDir for AppImage
+# AppImage files
+*.AppImage
 appdir
 AppRun
+
+# target binary
+myprog
