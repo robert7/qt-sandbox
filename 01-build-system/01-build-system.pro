@@ -46,11 +46,8 @@ images.files = images/*
 icons.path = $${PREFIX}/share/icons/hicolor/256x256/apps
 icons.files = images/$${TARGET}.png
 
-#icons2.path = appdir/$${TARGET}.png
-#icons2.files = images/$${TARGET}.png
-
 binary.path = $${PREFIX}/bin
-binary.files = $${OUT_PWD}/$${TARGET}
+binary.files = $${DESTDIR}/$${TARGET}
 message("Target binary: $${binary.files}")
 
 desktop.path = $${PREFIX}/share/applications

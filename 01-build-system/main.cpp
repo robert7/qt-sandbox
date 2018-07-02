@@ -2,6 +2,8 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QStandardPaths>
+#include <QDebug>
 
 int main(int argc, char* argv[])
 {
@@ -44,6 +46,14 @@ int main(int argc, char* argv[])
 
     // Display
     w->show();
+
+
+    const QString configLocation = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+    const QString dataLocation = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    const QString applicationDirPath = QCoreApplication::applicationDirPath();
+    qDebug() << "configLocation" << configLocation;
+    qDebug() << "dataLocation" << dataLocation;
+    qDebug() << "applicationDirPath" << applicationDirPath;
 
     // Event loop
     return app.exec();
