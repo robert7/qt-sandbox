@@ -57,6 +57,7 @@ Makefile.Release
 
 cmake-build-debug/
 qmake-build-debug/
+qmake-build-release/
 
 # idea
 .idea/workspace.xml
