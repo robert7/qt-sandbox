@@ -24,7 +24,9 @@ fi
 mkdir ${BUILD_DIR}
 
 
-${QMAKE_BINARY} CONFIG+=debug && make
+${QMAKE_BINARY} CONFIG+=debug PREFIX=appdir/usr
+make
 
-${QMAKE_BINARY} CONFIG+=debug
+#
+${QMAKE_BINARY} CONFIG+=debug PREFIX=appdir/usr
 make install

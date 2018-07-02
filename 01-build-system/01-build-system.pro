@@ -31,23 +31,24 @@ CONFIG(debug, debug|release) {
         MOC_DIR = qmake-build-debug
 }
 
-# target AppDir
-APPDIR_BASE=appdir/usr
+isEmpty(PREFIX) {
+ PREFIX = /usr
+}
 
-images.path = $$APPDIR_BASE/share/$$TARGET/images
+images.path = $${PREFIX}/share/$$TARGET/images
 images.files = images/*
 
-icons.path = $$APPDIR_BASE/share/icons/hicolor/256x256/apps
+icons.path = $${PREFIX}/share/icons/hicolor/256x256/apps
 icons.files = images/$${TARGET}.png
 
 #icons2.path = appdir/$${TARGET}.png
 #icons2.files = images/$${TARGET}.png
 
-binary.path = $$APPDIR_BASE/bin
+binary.path = $${PREFIX}/bin
 binary.files = $${OUT_PWD}/$${TARGET}
 message("Target binary: $${binary.files}")
 
-desktop.path = $$APPDIR_BASE/share/applications
+desktop.path = $${PREFIX}/share/applications
 desktop.files = $${TARGET}.desktop
 
 INSTALLS += images icons binary desktop
