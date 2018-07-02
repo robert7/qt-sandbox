@@ -1,6 +1,13 @@
 #!/bin/bash
 QT_DIR=${1}
-BUILD_DIR=qmake-build-debug
+BUILD_TYPE=${2}
+
+if [ -z "${BUILD_TYPE}" ]; then
+    BUILD_TYPE=debug
+fi
+
+
+BUILD_DIR=qmake-build-${BUILD_TYPE}
 APPDIR=appdir
 QMAKE_BINARY=${QT_DIR}/bin/qmake
 
@@ -24,9 +31,9 @@ fi
 mkdir ${BUILD_DIR}
 
 
-${QMAKE_BINARY} CONFIG+=debug PREFIX=appdir/usr
+${QMAKE_BINARY} CONFIG+=${BUILD_TYPE} PREFIX=appdir/usr
 make
 
 #
-${QMAKE_BINARY} CONFIG+=debug PREFIX=appdir/usr
+${QMAKE_BINARY} CONFIG+=${BUILD_TYPE} PREFIX=appdir/usr
 make install

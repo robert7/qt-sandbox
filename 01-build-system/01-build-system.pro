@@ -27,12 +27,17 @@ HEADERS += \
         colormenu.h
 
 CONFIG(debug, debug|release) {
-        OBJECTS_DIR = qmake-build-debug
-        MOC_DIR = qmake-build-debug
+    DESTDIR = qmake-build-debug
+    message(Debug build!)
+} else {
+    DESTDIR = qmake-build-release
+    message(Release build!)
 }
+OBJECTS_DIR = $${DESTDIR}
+MOC_DIR = $${DESTDIR}
 
 isEmpty(PREFIX) {
- PREFIX = /usr
+ PREFIX = /usr/local
 }
 
 images.path = $${PREFIX}/share/$$TARGET/images
