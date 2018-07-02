@@ -6,8 +6,10 @@ QMAKE_BINARY=${QT_DIR}/bin/qmake
 echo About to run: $0 $1
 
 if [ -z ${QT_DIR} ]; then
-    echo "1st argument need to be the Qr root directory. Example: $0: /d/dev/Qt/5.5/gcc_64"
+    echo "Missing argument(s).."
+    echo "1st argument need to be the Qr root directory."
     echo "Note: Qt root is where './bin/qmake' is.."
+    echo "Example: $0 /d/dev/Qt/5.5/gcc_64"
     exit 1
 fi
 if [ ! -f "${QMAKE_BINARY}" ]; then

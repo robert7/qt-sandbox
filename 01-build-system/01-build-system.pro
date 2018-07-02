@@ -45,6 +45,7 @@ images.files = images/*
 
 icons.path = $${PREFIX}/share/icons/hicolor/256x256/apps
 icons.files = images/$${TARGET}.png
+RC_ICONS += "images/$${TARGET}.png"
 
 binary.path = $${PREFIX}/bin
 binary.files = $${DESTDIR}/$${TARGET}

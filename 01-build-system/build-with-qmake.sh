@@ -3,9 +3,11 @@ QT_DIR=${1}
 BUILD_TYPE=${2}
 
 if [ -z ${QT_DIR} ]; then
-    echo "1st argument need to be the Qr root directory. Example: $0: /d/dev/Qt/5.5/gcc_64"
+    echo "Missing argument(s).."
+    echo "1st argument need to be the Qr root directory."
     echo "    Note: Qt root is where './bin/qmake' is.."
     echo "2nd argument is debug|release (defaults to debug)"
+    echo "Example: $0 /d/dev/Qt/5.5/gcc_64 debug"
     exit 1
 fi
 if [ -z "${BUILD_TYPE}" ]; then

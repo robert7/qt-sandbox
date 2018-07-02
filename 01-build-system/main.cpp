@@ -5,9 +5,12 @@
 #include <QStandardPaths>
 #include <QDebug>
 
+#define APP_NAME "myprog"
+
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
+    QCoreApplication::setApplicationName(APP_NAME);
 
     // Horizontal layout with 3 buttons
     QHBoxLayout *hLayout = new QHBoxLayout;
