@@ -5,6 +5,9 @@
 #include <QStandardPaths>
 #include <QDebug>
 #include <QDir>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+
 
 #define APP_NAME "myprog"
 
@@ -55,6 +58,35 @@ QString slashTerminatePath(QString path) {
     return path;
 }
 
+/**
+ * Check directory is writeable, if it doesn't exist, create it first.
+ **/
+void createDirOrCheckWriteable(QDir dir) {
+    if (!dir.exists()) {
+        QLOG_DEBUG() << "About to create directory " << dir;
+        if (!dir.mkpath(dir.path())) {
+            QLOG_FATAL() << "Failed to create directory '" << dir.path() << "'.  Aborting program.";
+            exit(16);
+        }
+    }
+    //checkExistingWriteableDir(dir);
+}
+
+void trySomeDbStuff(QString dataLocation) {
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(dataLocation + "data.db");
+    if (!db.open()) {
+        qDebug() << "Error: connection with database fail";
+    } else {
+        qDebug() << "Database: connection ok";
+    }
+    QSqlQuery query;
+    query.exec("drop table if exists person");
+    query.exec("create table person (id int primary key, firstname varchar(20), lastname varchar(20))");
+}
+
+
+
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     QCoreApplication::setApplicationName(APP_NAME);
@@ -98,16 +130,20 @@ int main(int argc, char *argv[]) {
     w->show();
 
 
-    const QString configLocation = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
-    const QString dataLocation = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    const QString applicationDirPath = getDefaultProgramDirPath();
+    const QString configLocation = slashTerminatePath(
+        QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
+    const QString dataLocation = slashTerminatePath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
+    const QString applicationDirPath = slashTerminatePath(getDefaultProgramDirPath());
     QLOG_DEBUG() << "Config directory: " << configLocation;
     QLOG_DEBUG() << "Data directory: " << dataLocation;
     QLOG_DEBUG() << "Program data directory: " << applicationDirPath;
 
-    const QString imagesPath = slashTerminatePath(applicationDirPath) + "images";
+    const QString imagesPath = applicationDirPath + "images";
     checkExistingReadableDir(QDir(imagesPath));
     QLOG_DEBUG() << "OK.";
+    createDirOrCheckWriteable(QDir(dataLocation));
+
+    trySomeDbStuff(dataLocation);
 
     // Event loop
     return app.exec();

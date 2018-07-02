@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 2.8.12)
 project (myprog)
 
 find_package (Qt5Widgets)
+find_package (Qt5Sql)
 set (MyProject_src ${PROJECT_SOURCE_DIR}/main.cpp
                    ${PROJECT_SOURCE_DIR}/colormenu.cpp
     )
@@ -17,4 +18,4 @@ add_executable(myprog
         ${MyProject_src}
         ${MyProject_hdr_moc}
         )
-target_link_libraries (myprog Qt5::Widgets)
+target_link_libraries (myprog Qt5::Widgets Qt5::Sql)
