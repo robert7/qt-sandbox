@@ -1,8 +1,6 @@
 message("Out path: $${OUT_PWD}")
 
-QT += core gui
-QT += widgets
-
+QT += core gui widgets sql
 
 TARGET = myprog
 TEMPLATE = app
