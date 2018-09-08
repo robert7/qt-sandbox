@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROG=myprog
+PROG=qt-sandbox
 DESKTOP_FILE=appdir/usr/share/applications/${PROG}.desktop
 
 QT_DIR=${1}
