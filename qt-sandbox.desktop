@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=myprog
-Comment=Sample Qt program
-Exec=myprog
-Icon=myprog
+Name=qt-sandbox
+Comment=Qt Sandbox
+Exec=qt-sandbox
+Icon=qt-sandbox
 Categories=Office;
