@@ -9,7 +9,7 @@
 #include <QSqlQuery>
 
 
-#define APP_NAME "myprog"
+#define APP_NAME "qt-sandbox"
 
 // just convenience shortcuts so I can easier cut/paste code in this sandbox example
 #define QLOG_DEBUG qDebug
@@ -93,18 +93,18 @@ int main(int argc, char *argv[]) {
 
     // Horizontal layout with 3 buttons
     QHBoxLayout *hLayout = new QHBoxLayout;
-    QPushButton *b1 = new QPushButton("A");
-    QPushButton *b2 = new QPushButton("B");
-    QPushButton *b3 = new QPushButton("C");
+    QPushButton *b1 = new QPushButton("Sand");
+    QPushButton *b2 = new QPushButton("Box");
+    QPushButton *b3 = new QPushButton("Play");
     hLayout->addWidget(b1);
     hLayout->addWidget(b2);
     hLayout->addWidget(b3);
 
     // Vertical layout with 3 buttons
     QVBoxLayout *vLayout = new QVBoxLayout;
-    QPushButton *b4 = new QPushButton("D");
-    QPushButton *b5 = new QPushButton("E");
-    QPushButton *b6 = new QPushButton("F");
+    QPushButton *b4 = new QPushButton("Ground");
+    QPushButton *b5 = new QPushButton("...");
+    QPushButton *b6 = new QPushButton("/--\\");
     vLayout->addWidget(b4);
     vLayout->addWidget(b5);
     vLayout->addWidget(b6);
@@ -124,7 +124,7 @@ int main(int argc, char *argv[]) {
     w->setLayout(mainLayout);
 
     // Window title
-    w->setWindowTitle("layouts");
+    w->setWindowTitle("qt-sandbox");
 
     // Display
     w->show();
