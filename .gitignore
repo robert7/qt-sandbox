@@ -74,5 +74,10 @@ qmake-build-release/
 appdir
 AppRun
 
-# target binary
-myprog
+# AppImage files
+*.AppImage
+appdir
+
+# build version file
+_build_dir_.txt
+build-version.txt
