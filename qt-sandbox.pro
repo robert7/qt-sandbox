@@ -41,9 +41,9 @@ isEmpty(PREFIX) {
 images.path = $${PREFIX}/share/$$TARGET/images
 images.files = images/*
 
-icons.path = $${PREFIX}/share/icons/hicolor/256x256/apps
-icons.files = images/$${TARGET}.png
-RC_ICONS += "images/$${TARGET}.png"
+icons.path = $${PREFIX}/share/icons/hicolor/48x48/apps
+icons.files = icons/$${TARGET}.png
+RC_ICONS += "icons/$${TARGET}.png"
 
 binary.path = $${PREFIX}/bin
 binary.files = $${DESTDIR}/$${TARGET}

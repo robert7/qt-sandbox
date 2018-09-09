@@ -1,7 +1,9 @@
 [Desktop Entry]
-Type=Application
 Name=qt-sandbox
 Comment=Qt Sandbox
 Exec=qt-sandbox
 Icon=qt-sandbox
+StartupNotify=true
+Terminal=false
+Type=Application
 Categories=Office;
