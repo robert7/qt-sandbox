@@ -15,10 +15,16 @@ BIN_PATH=/usr/bin
 if [ -d "${BUILD_DIR}" ]; then
   rm -rf ${BUILD_DIR}
 fi
+
 if [ ! -f "${APPDIR}${BIN_PATH}/${PROG}" ]; then
   echo "Binary ${APPDIR}${BIN_PATH}/${PROG} is missing. Do a build first.."
+  exit 1
+fi
+if [ "${APPDIR}/*.desktop" ]; then
+  echo "AppImage must NOT be build (do a build first, but don't create AppImage)"
+  exit 1
 fi
 
 mkdir ${BUILD_DIR}
-cp -rf ${APPDIR} ${BUILD_DIR}
+cp -rf ${APPDIR}/* ${BUILD_DIR}
 

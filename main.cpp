@@ -124,7 +124,7 @@ int main(int argc, char *argv[]) {
     w->setLayout(mainLayout);
 
     // Window title
-    w->setWindowTitle("qt-sandbox");
+    w->setWindowTitle(APP_NAME);
 
     // Display
     w->show();
