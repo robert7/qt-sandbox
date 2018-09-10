@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -f ./development/clean.sh ]; then
+  echo "You seem to be in wrong directory. script MUST be run from the project directory."
+  exit 1
+fi
+
 PROG=qt-sandbox
 DESKTOP_FILE=appdir/usr/share/applications/${PROG}.desktop
 
