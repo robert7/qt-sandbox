@@ -1,0 +1,9 @@
+Package: qt-sandbox
+Version: __VERSION__
+Section: utils
+Priority: optional
+Architecture: __ARCH__ 
+Maintainer: Robert Spiegel <robert.spiegel7@gmail.com>
+Depends: libc6, libpoppler-qt5, libqt5sql5, libqt5sql5-sqlite, libqt5xml5, libqt5gui5, libqt5webkit5, libqt5network5, libqt5core5 | libqt5core5a, libpng12-0, libsqlite3-0, libtbb2, libcurl3
+Description: Qt playground - tutorial/example/introductory experiments with Qt framework,
+ qmake and cmake build systems, AppImage & debian packaging.
