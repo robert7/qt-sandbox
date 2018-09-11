@@ -5,7 +5,8 @@ DEV_DIR=`dirname $0`
 
 export DEB_BUILD_HARDENING=0
 BUILD_DIR=./build
-# target path of binary
+
+# target path of binary in appdir
 BIN_PATH=/usr/bin
 arch="amd64"
 
@@ -27,7 +28,7 @@ fi
 
 mkdir ${BUILD_DIR}
 cp -rf ${APPDIR}/* ${BUILD_DIR}
-cp -rf ./packaging/DEBIAN ${BUILD_DIR}
+cp -rf ${DEV_DIR}/DEBIAN ${BUILD_DIR}
 
 # edit the version & architecture
 sed -i "s/__ARCH__/$arch/" ${BUILD_DIR}/DEBIAN/control || error_exit "sed"
