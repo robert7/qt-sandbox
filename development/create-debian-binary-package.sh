@@ -6,6 +6,13 @@ DEV_DIR=`dirname $0`
 export DEB_BUILD_HARDENING=0
 BUILD_DIR=./build
 
+if [ "$(id -u)" != "0" ]; then
+   # as the contents of the .deb file should bw owned by root
+   echo "This script must be run as root"
+   exit 1
+fi
+
+
 # target path of binary in appdir
 BIN_PATH=/usr/bin
 arch="amd64"
@@ -29,6 +36,8 @@ fi
 mkdir ${BUILD_DIR}
 cp -rf ${APPDIR}/* ${BUILD_DIR}
 cp -rf ${DEV_DIR}/DEBIAN ${BUILD_DIR}
+cp ${DEV_DIR}/../CHANGELOG.md ${BUILD_DIR}/changelog
+
 
 # edit the version & architecture
 sed -i "s/__ARCH__/$arch/" ${BUILD_DIR}/DEBIAN/control || error_exit "sed"

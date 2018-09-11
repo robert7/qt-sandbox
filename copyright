@@ -1,0 +1,9 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Name: Qt Sandbox
+Maintainer: Robert Spiegel <robert.spiegel7@gmail.com>
+Source: http://github.com/robert7
+
+Copyright: 2018 Robert Spiegel <robert.spiegel7@gmail.com>
+License: GPL-3+
+
+
