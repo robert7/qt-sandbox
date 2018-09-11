@@ -1,12 +1,11 @@
 #!/bin/bash
+
+DEV_DIR=`dirname $0`
+. ${DEV_DIR}/common-include.sh
+
 QT_DIR=${1}
 BUILD_DIR=cmake-build-debug
 QMAKE_BINARY=${QT_DIR}/bin/qmake
-
-if [ ! -f ./development/clean.sh ]; then
-  echo "You seem to be in wrong directory. script MUST be run from the project directory."
-  exit 1
-fi
 
 echo About to run: $0 $1
 

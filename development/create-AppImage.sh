@@ -1,11 +1,8 @@
 #!/bin/bash
 
-if [ ! -f ./development/clean.sh ]; then
-  echo "You seem to be in wrong directory. script MUST be run from the project directory."
-  exit 1
-fi
+DEV_DIR=`dirname $0`
+. ${DEV_DIR}/common-include.sh
 
-PROG=qt-sandbox
 DESKTOP_FILE=appdir/usr/share/applications/${PROG}.desktop
 
 BUILD_DIR=$(cat _build_dir_.txt)

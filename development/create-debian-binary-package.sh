@@ -1,23 +1,10 @@
 #!/bin/bash
 
-if [ ! -f ./development/clean.sh ]; then
-  echo "You seem to be in wrong directory. script MUST be run from the project directory."
-  exit 1
-fi
-
-function error_exit {
-    echo "***********error_exit***********"
-    echo "***********" 1>&2
-    echo "*********** Failed: $1" 1>&2
-    echo "***********" 1>&2
-    #cd ${CDIR}
-    exit 1
-}
+DEV_DIR=`dirname $0`
+. ${DEV_DIR}/common-include.sh
 
 export DEB_BUILD_HARDENING=0
-PROG=qt-sandbox
 BUILD_DIR=./build
-APPDIR=./appdir
 # target path of binary
 BIN_PATH=/usr/bin
 arch="amd64"
