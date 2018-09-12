@@ -1,0 +1,13 @@
+Source: qt-sandbox
+Maintainer: Robert Spiegel <nightingale7@gmail.com>
+Section: misc
+Priority: optional
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 9)
+Homepage: https://github.com/robert7/qt-sandbox
+
+Package: qt-sandbox
+Architecture: any
+Depends: ${misc:Depends}
+Description: Qt playground - tutorial/example/introductory experiments with Qt framework, 
+  qmake and cmake build systems, AppImage & debian packaging.
