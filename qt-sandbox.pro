@@ -52,4 +52,8 @@ message("Target binary: $${binary.files}")
 desktop.path = $${PREFIX}/share/applications
 desktop.files = $${TARGET}.desktop
 
-INSTALLS += images icons binary desktop
+man.path = $${PREFIX}/share/man/man1
+man.files = $${TARGET}.1
+
+
+INSTALLS += images icons binary desktop man
