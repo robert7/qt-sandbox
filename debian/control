@@ -1,0 +1,31 @@
+Source: qt-sandbox
+Maintainer: Robert Spiegel <nightingale7@gmail.com>
+Section: misc
+Priority: optional
+Standards-Version: 4.1.4
+Build-Depends:
+ debhelper (>= 9),
+ default-jdk,
+ javahelper,
+ libboost-dev,
+ libcurl4-openssl-dev | libcurl-dev | libcurl4-nss-dev | libcurl4-gnutls-dev,
+ libhunspell-dev,
+ libqt5webkit5-dev,
+ libswscale-dev,
+ libtidy-dev,
+ qml,
+ qt5-qmake,
+ qtbase5-dev,
+ qttools5-dev-tools
+Homepage: https://github.com/robert7/qt-sandbox
+
+Package: qt-sandbox
+Architecture: any
+Depends:
+ tidy,
+ ${java:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends}
+Depends: ${misc:Depends}
+Description: Qt playground - tutorial/example/introductory experiments with Qt framework, 
+  qmake and cmake build systems, AppImage & debian packaging.

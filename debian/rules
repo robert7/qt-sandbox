@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+export QT_SELECT = 5
+
+_DEBIAN_VERSION=$(shell dpkg-parsechangelog | grep '^Version: .*' | grep -o ' .*' | grep -o '[0-9].*')
+_VERSION=$(shell echo $(_DEBIAN_VERSION) | cut -d- -f 1)
+_PKGNAME=$(shell dpkg-parsechangelog | head -n 1 | cut -d ' ' -f 2)
+JAVA_HOME=/usr/lib/jvm/default-java
+CLASSPATH=.
+
+# main packaging script based on dh7 syntax
+%:
+	dh $@ --with javahelper
+
+
+# reinstate previous install code
+#override_dh_auto_install:
+#	dh_auto_install
+#	mkdir -p debian/qt-sandbox/usr/share/man/man1
+#	cp qt-sandbox.1 debian/qt-sandbox/usr/share/man/man1/qt-sandbox.1
+#	gzip -9 debian/qt-sandbox/usr/share/man/man1/qt-sandbox.1
+	
+
+# never install ts translation file
+override_dh_install:
+	dh_install -X*.ts
+
+# replace __VERSION__ placeholder with source version name
+override_dh_installdocs:
+	dh_installdocs
+
+#find debian/$(_PKGNAME)/ -type f -exec sed -i 's/__VERSION__/$(_VERSION)/g' {} + || true

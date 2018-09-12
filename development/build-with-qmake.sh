@@ -1,15 +1,13 @@
 #!/bin/bash
+
+DEV_DIR=`dirname $0`
+. ${DEV_DIR}/common-include.sh
+
+
 QT_DIR=${1}
 BUILD_TYPE=${2}
 
-function error_exit {
-    echo "***********error_exit***********"
-    echo "***********" 1>&2
-    echo "*********** Failed: $1" 1>&2
-    echo "***********" 1>&2
-    #cd ${CDIR}
-    exit 1
-}
+
 
 if [ -z ${QT_DIR} ]; then
     echo "Missing argument(s).."
@@ -18,10 +16,6 @@ if [ -z ${QT_DIR} ]; then
     echo "2nd argument is debug|release (defaults to debug)"
     echo "Example: $0 /d/dev/Qt/5.5/gcc_64 debug"
     exit 1
-fi
-if [ ! -f ./development/clean.sh ]; then
-  echo "You seem to be in wrong directory. script MUST be run from the project directory."
-  exit 1
 fi
 
 
@@ -50,7 +44,6 @@ echo $QT_DIR >${BUILD_DIR}/qt-dir.txt
 echo "${BUILD_DIR}">_build_dir_.txt
 echo Building version: ${VERSION}
 
-APPDIR=appdir
 if [ -d "${APPDIR}" ]; then
   rm -rf ${APPDIR}
   rm *.AppImage 2>/dev/null

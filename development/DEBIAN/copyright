@@ -1,0 +1,11 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: qt-sandbox
+Upstream-Contact: Robert Spiegel <robert.spiegel7@gmail.com>
+Maintainer: Robert Spiegel <robert.spiegel7@gmail.com>
+Source: https://github.com/robert7/qt-sandbox
+
+Files: *
+Copyright: Robert Spiegel <robert.spiegel7@gmail.com>
+License: GPL-3
+
+

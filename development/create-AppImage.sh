@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PROG=qt-sandbox
+DEV_DIR=`dirname $0`
+. ${DEV_DIR}/common-include.sh
+
 DESKTOP_FILE=appdir/usr/share/applications/${PROG}.desktop
 
 BUILD_DIR=$(cat _build_dir_.txt)

@@ -1,4 +1,8 @@
 #!/bin/bash
+
+DEV_DIR=`dirname $0`
+. ${DEV_DIR}/common-include.sh
+
 QT_DIR=${1}
 BUILD_DIR=cmake-build-debug
 QMAKE_BINARY=${QT_DIR}/bin/qmake
