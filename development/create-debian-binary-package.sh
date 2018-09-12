@@ -1,5 +1,7 @@
 #!/bin/bash
 
+###### experiments with debian binary packaging
+
 DEV_DIR=`dirname $0`
 . ${DEV_DIR}/common-include.sh
 
