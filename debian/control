@@ -26,6 +26,5 @@ Depends:
  ${java:Depends},
  ${misc:Depends},
  ${shlibs:Depends}
-Depends: ${misc:Depends}
 Description: Qt playground - tutorial/example/introductory experiments with Qt framework, 
   qmake and cmake build systems, AppImage & debian packaging.
