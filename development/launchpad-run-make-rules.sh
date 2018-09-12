@@ -6,5 +6,9 @@
 DEV_DIR=`dirname $0`
 . ${DEV_DIR}/common-include.sh
 
-make -n -d --file ./debian/rules clean
+
+dh clean --without=build-stamp || error_exit "dh clean"
+dh build-arch --without=build-stamp --buildsystem=qmake --with javahelper
+
+
 

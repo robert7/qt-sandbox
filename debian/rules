@@ -4,6 +4,11 @@
 #export DH_VERBOSE = 1
 
 
+
+ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
+  CFLAGS = -O0 -g
+endif
+
 # see FEATURE AREAS in dpkg-buildflags(1)
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
@@ -15,10 +20,28 @@ _PKGNAME=$(shell dpkg-parsechangelog | head -n 1 | cut -d ' ' -f 2)
 JAVA_HOME=/usr/lib/jvm/default-java
 CLASSPATH=.
 
+# https://github.com/aperezdc/cuacfmeego/blob/master/debian/rules
+QMAKE_OPTIONS = -makefile -nocache
+
+ifneq (,$(filter debug,$(DEB_BUILD_OPTIONS)))
+  QMAKE_OPTIONS += CONFIG*=debug CONFIG-=release
+  CFLAGS = -O0 -g
+else
+  QMAKE_OPTIONS += CONFIG*=release CONFIG-=debug
+endif
+
+# Teach qmake about CFLAGS, poor qmake doesn't know about it...
+#
+QMAKE_OPTIONS += QMAKE_CXXFLAGS_RELEASE='$(CFLAGS)' \
+                 QMAKE_CXXFLAGS_DEBUG='$(CFLAGS)' \
+                 QMAKE_CFLAGS_RELEASE='$(CFLAGS)' \
+                 QMAKE_CFLAGS_DEBUG='$(CFLAGS)' \
+                 QMAKE_STRIP=: \
+
 # main packaging script based on dh7 syntax
 %:
-	echo running main packaging script
-	dh $@ --with javahelper
+	echo running main packaging script: $@
+	dh $@ --buildsystem=qmake --with javahelper
 
 
 # reinstate previous install code
@@ -33,8 +56,11 @@ CLASSPATH=.
 override_dh_install:
 	dh_install -X*.ts
 
+override_dh_auto_configure:
+	qmake $(QMAKE_OPTIONS)
+
 # replace __VERSION__ placeholder with source version name
-override_dh_installdocs:
-	dh_installdocs
+#override_dh_installdocs:
+#	dh_installdocs
 
 #find debian/$(_PKGNAME)/ -type f -exec sed -i 's/__VERSION__/$(_VERSION)/g' {} + || true
