@@ -4,6 +4,7 @@ sudo: require
 dist: xenial
 
 before_install:
+  - #test
   - sudo add-apt-repository ppa:nixnote/nixnote2-stable -y
   - sudo apt-get update -qq
 
