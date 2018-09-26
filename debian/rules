@@ -43,21 +43,14 @@ QMAKE_OPTIONS += QMAKE_CXXFLAGS_RELEASE='$(CFLAGS)' \
 	echo running main packaging script: $@
 	dh $@ --buildsystem=qmake --with javahelper
 
-
-# reinstate previous install code
-#override_dh_auto_install:
-#	dh_auto_install
-#	mkdir -p debian/qt-sandbox/usr/share/man/man1
-#	cp qt-sandbox.1 debian/qt-sandbox/usr/share/man/man1/qt-sandbox.1
-#	gzip -9 debian/qt-sandbox/usr/share/man/man1/qt-sandbox.1
+override_dh_auto_configure:
+	qmake $(QMAKE_OPTIONS)
 
 
 # never install ts translation file
 override_dh_install:
 	dh_install -X*.ts
 
-override_dh_auto_configure:
-	qmake $(QMAKE_OPTIONS)
 
 # replace __VERSION__ placeholder with source version name
 #override_dh_installdocs:
