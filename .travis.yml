@@ -33,7 +33,7 @@ after_success:
        RELEASE_NOTES=$(cat ./development/release-notes/release-$TRAVIS_BRANCH.md)
        export UPLOADTOOL_BODY="$RELEASE_NOTES\nTravis CI build log: https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID/"
        mv debian/changelog debian/changelog.txt
-       bash upload.sh qt-sandbox*.AppImage* debian/changelog.txt
+       bash upload.sh qt-sandbox*.AppImage debian/changelog.txt
     fi
 
 branches:
