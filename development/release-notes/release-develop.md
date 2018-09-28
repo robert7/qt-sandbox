@@ -1,2 +1,1 @@
-Development
-version.
+Development version.

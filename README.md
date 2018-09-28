@@ -1,6 +1,8 @@
 # qt-sandbox
-Qt playground - tutorial/example/introductory experiments with Qt framework,
-qmake and cmake build systems, AppImage & debian packaging.
+This is a small non-sense content repository - with few random C files - where I tried out
+few things with Qt framework mainly related to building:
+qmake and cmake builds, AppImage & debian packaging and launchpad building, Travis CI build
+and release upload.
 
 Travis CI [![Build Status](https://travis-ci.com/robert7/qt-sandbox.svg?branch=master)](https://travis-ci.com/robert7/qt-sandbox)
 
