@@ -35,7 +35,7 @@ OBJECTS_DIR = $${DESTDIR}
 MOC_DIR = $${DESTDIR}
 
 isEmpty(PREFIX) {
- PREFIX = /usr/local
+ PREFIX = /usr
 }
 
 images.path = $${PREFIX}/share/$$TARGET/images

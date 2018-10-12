@@ -5,7 +5,7 @@ find_package (Qt5Widgets)
 find_package (Qt5Sql)
 set (QtSandbox_src src/main.cpp
         src/colormenu.cpp
-    )
+        testsrc/tests.h)
 set (QtSandbox_hdr src/colormenu.h)
 
 qt5_wrap_cpp(QtSandbox_hdr_moc ${QtSandbox_hdr})
