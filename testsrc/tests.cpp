@@ -4,22 +4,21 @@
 
 #include "tests.h"
 
-TestQString::TestQString(QObject *parent) :
+Tests::Tests(QObject *parent) :
     QObject(parent)
 {
 
 }
 
-void TestQString::xx()
+void Tests::xx()
 {
 
 }
 
-void TestQString::toUpper()
+void Tests::toUpper()
 {
     QString str = "Hello";
     QCOMPARE(str.toUpper(), QString("HELLO"));
 }
 
-QTEST_APPLESS_MAIN(TestQString)
-//#include "tests.moc"
+QTEST_APPLESS_MAIN(Tests)

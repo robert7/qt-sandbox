@@ -3,15 +3,15 @@
 
 #include <QObject>
 
-class TestQString: public QObject
+class Tests: public QObject
 {
     Q_OBJECT
 
 public:
-    //TestQString();           // Generic constructor
+    //Tests();           // Generic constructor
 
-    Q_INVOKABLE explicit TestQString(QObject *parent=Q_NULLPTR);
-    virtual ~TestQString() {};
+    Q_INVOKABLE explicit Tests(QObject *parent=Q_NULLPTR);
+    virtual ~Tests() {};
     virtual void xx();
 
 private slots:
