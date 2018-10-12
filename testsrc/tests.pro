@@ -2,7 +2,7 @@ message("Out path: $${OUT_PWD}")
 
 QT += core gui widgets sql testlib
 
-TARGET = all_tests
+TARGET = tests
 TEMPLATE = app
 
 SOURCES += tests.cpp ../src/colormenu.cpp
