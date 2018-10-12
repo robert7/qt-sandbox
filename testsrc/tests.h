@@ -16,6 +16,7 @@ public:
 
 private slots:
     void toUpper();
+    void colorMenu();
 
 };
 

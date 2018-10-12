@@ -5,8 +5,8 @@ QT += core gui widgets sql testlib
 TARGET = all_tests
 TEMPLATE = app
 
-SOURCES += tests.cpp
-HEADERS += tests.h
+SOURCES += tests.cpp ../src/colormenu.cpp
+HEADERS += tests.h ../src/colormenu.h
 
 CONFIG(debug, debug|release) {
     DESTDIR = qmake-build-debug

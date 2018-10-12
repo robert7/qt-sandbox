@@ -3,6 +3,7 @@
 #include <QString>
 
 #include "tests.h"
+#include "../src/colormenu.h"
 
 Tests::Tests(QObject *parent) :
     QObject(parent)
@@ -20,5 +21,11 @@ void Tests::toUpper()
     QString str = "Hello";
     QCOMPARE(str.toUpper(), QString("HELLO"));
 }
+void Tests::colorMenu()
+{
+    ColorMenu colormenu;
+    QStringList colorNames = colormenu.colorNames();
+    QCOMPARE(colorNames.first(), QString("black"));
+}
 
-QTEST_APPLESS_MAIN(Tests)
+QTEST_MAIN(Tests)

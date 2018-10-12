@@ -35,9 +35,9 @@ private:
     QColor currentColor;
     QMap<QString, QString> colorMap;
 
-    static QStringList colorNames();
 
 public:
+    static QStringList colorNames();
     explicit ColorMenu(QObject *parent = 0);
     void setCurrentColor(QColor color);
     void setCurrentColor(QString color);
