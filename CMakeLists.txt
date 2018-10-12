@@ -3,10 +3,10 @@ project (qt-sandbox)
 
 find_package (Qt5Widgets)
 find_package (Qt5Sql)
-set (QtSandbox_src ${PROJECT_SOURCE_DIR}/main.cpp
-                   ${PROJECT_SOURCE_DIR}/colormenu.cpp
+set (QtSandbox_src src/main.cpp
+        src/colormenu.cpp
     )
-set (QtSandbox_hdr ${PROJECT_SOURCE_DIR}/colormenu.h)
+set (QtSandbox_hdr src/colormenu.h)
 
 qt5_wrap_cpp(QtSandbox_hdr_moc ${QtSandbox_hdr})
 

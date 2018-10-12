@@ -18,11 +18,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-    main.cpp \
-    colormenu.cpp
+    src/main.cpp \
+    src/colormenu.cpp
 
 HEADERS += \
-        colormenu.h
+        src/colormenu.h
 
 CONFIG(debug, debug|release) {
     DESTDIR = qmake-build-debug
