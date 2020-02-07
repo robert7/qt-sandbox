@@ -35,7 +35,7 @@ OBJECTS_DIR = $${DESTDIR}
 MOC_DIR = $${DESTDIR}
 
 isEmpty(PREFIX) {
- PREFIX = /usr/local
+    PREFIX = /usr/local
 }
 
 images.path = $${PREFIX}/share/$$TARGET/images
@@ -56,4 +56,16 @@ man.path = $${PREFIX}/share/man/man1
 man.files = $${TARGET}.1
 
 
-INSTALLS += images icons binary desktop man
+
+mac {
+    message("macOS" specific build!)
+    # we go for an appbundle that contains all resources (except
+    # the shared library dependencies - use macdeployqt for those).
+    images.path = Contents/Resources
+    images.files = images
+    INSTALLS += images
+} else {
+    ## message(not a "macOS" specific build!)
+    INSTALLS += images icons binary desktop man
+}
+

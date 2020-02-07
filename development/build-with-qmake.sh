@@ -6,12 +6,13 @@ DEV_DIR=`dirname $0`
 
 QT_DIR=${1}
 BUILD_TYPE=${2}
+APPDIR=appdir
 
 
 
 if [ -z ${QT_DIR} ]; then
     echo "Missing argument(s).."
-    echo "1st argument need to be the Qr root directory."
+    echo "1st argument need to be the Qt root directory."
     echo "    Note: Qt root is where './bin/qmake' is.."
     echo "2nd argument is debug|release (defaults to debug)"
     echo "Example: $0 /d/dev/Qt/5.5/gcc_64 debug"
@@ -37,7 +38,8 @@ fi
 VERSION="$(cat version.txt)-$(git rev-parse --short HEAD)"
 # for simplicity now create in both dirs
 echo $VERSION >${BUILD_DIR}/build-version.txt
-# this may not be needed, if we run from "appdir" during development
+
+# this may be needed, if we run from "appdir" during development
 echo $VERSION >build-version.txt
 
 echo $QT_DIR >${BUILD_DIR}/qt-dir.txt
@@ -58,9 +60,18 @@ if [ ! -f "${QMAKE_BINARY}" ]; then
 fi
 
 
-${QMAKE_BINARY} CONFIG+=${BUILD_TYPE} PREFIX=appdir/usr || error_exit "qmake"
+PREFIX_DIR=$APPDIR/usr
+#if [[ "$OSTYPE" == "darwin"* ]]; then
+#  # OSX
+#  PREFIX_DIR=$BUILD_DIR/$PROG.app/Contents
+#fi
+
+echo Appdir: ${APPDIR}, prefix dir: ${PREFIX_DIR}
+
+
+${QMAKE_BINARY} CONFIG+=${BUILD_TYPE} PREFIX=${PREFIX_DIR} || error_exit "qmake"
 make || error_exit "make"
 
-# this is a bit hack: we rerun qmake, to generate "install" incl. just created created binary
-${QMAKE_BINARY} CONFIG+=${BUILD_TYPE} PREFIX=appdir/usr || error_exit "qmake (2nd)"
-make install || error_exit "make install"
+## this is a bit hack: we rerun qmake, to generate "install" incl. just created created binary
+##${QMAKE_BINARY} CONFIG+=${BUILD_TYPE} PREFIX=appdir/usr || error_exit "qmake (2nd)"
+##make install || error_exit "make install"
