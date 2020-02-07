@@ -11,9 +11,10 @@ Build binary (using system Qt): `./development/build-with-qmake.sh /usr release`
 Build binary (using local Qt version): `./development/build-with-qmake.sh /d/dev/Qt/5.5/gcc_64 debug`
 
 ## macOS: build with qmake
-Install and configure MacPorts.
-`sudo port install qt5`
+Install and configure MacPorts - e.g.: `sudo port install qt5`
+
 Adjust PATH for MacPorts e.g.: `export PATH=/opt/local/bin:/opt/local/sbin:$PATH`
+
 Adjust PATH for qt5 e.g.: `export PATH=/opt/local/libexec/qt5:$PATH`
 
 Build binary (MacPorts Qt): `./development/build-with-qmake.sh /opt/local/libexec/qt5 release`
