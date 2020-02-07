@@ -31,6 +31,11 @@ CONFIG(debug, debug|release) {
     DESTDIR = qmake-build-release
     message(Release build!)
 }
+mac {
+    PREFIX = $${DESTDIR}/$${TARGET}.app
+}
+
+
 OBJECTS_DIR = $${DESTDIR}
 MOC_DIR = $${DESTDIR}
 
@@ -58,10 +63,10 @@ man.files = $${TARGET}.1
 
 
 mac {
-    message("macOS" specific build!)
+    message("macOS" specific build! TARGET=$${TARGET} PREFIX=$${PREFIX})
     # we go for an appbundle that contains all resources (except
     # the shared library dependencies - use macdeployqt for those).
-    images.path = Contents/Resources
+    images.path = $${PREFIX}/Contents
     images.files = images
     INSTALLS += images
 } else {
