@@ -133,10 +133,18 @@ int main(int argc, char *argv[]) {
     const QString configLocation = slashTerminatePath(
         QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
     const QString dataLocation = slashTerminatePath(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
-    const QString applicationDirPath = slashTerminatePath(getDefaultProgramDirPath());
+
+    QString applicationDirPath = slashTerminatePath(getDefaultProgramDirPath());
+
+
+#ifdef Q_OS_MACOS
+    // there should be a better way, but let keep it simple for now
+    applicationDirPath.append("Resources/");
+#endif
+
     QLOG_DEBUG() << "Config directory: " << configLocation;
     QLOG_DEBUG() << "Data directory: " << dataLocation;
-    QLOG_DEBUG() << "Program data directory: " << applicationDirPath;
+    QLOG_DEBUG() << "Program data directory (resources): " << applicationDirPath;
 
     const QString imagesPath = applicationDirPath + "images";
     checkExistingReadableDir(QDir(imagesPath));

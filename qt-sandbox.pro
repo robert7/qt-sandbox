@@ -66,7 +66,7 @@ mac {
     message("macOS" specific build! TARGET=$${TARGET} PREFIX=$${PREFIX})
     # we go for an appbundle that contains all resources (except
     # the shared library dependencies - use macdeployqt for those).
-    images.path = $${PREFIX}/Contents
+    images.path = $${PREFIX}/Contents/Resources
     images.files = images
     INSTALLS += images
 } else {
