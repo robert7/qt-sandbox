@@ -4,22 +4,8 @@ DEV_DIR=`dirname $0`
 . ${DEV_DIR}/common-include.sh
 
 
-QT_DIR=${1}
-BUILD_TYPE=${2}
+BUILD_TYPE=${1}
 APPDIR=appdir
-
-
-
-if [ -z ${QT_DIR} ]; then
-    echo "Missing argument(s).."
-    echo "1st argument need to be the Qt root directory."
-    echo "    Note: Qt root is where './bin/qmake' is.."
-    echo "2nd argument is debug|release (defaults to debug)"
-    echo "Example: $0 /d/dev/Qt/5.5/gcc_64 debug"
-    exit 1
-fi
-
-
 
 if [ -z "${BUILD_TYPE}" ]; then
     BUILD_TYPE=debug
@@ -28,7 +14,6 @@ BUILD_DIR=qmake-build-${BUILD_TYPE}
 if [ ! -d "${BUILD_DIR}" ]; then
   mkdir ${BUILD_DIR}
 fi
-
 
 # maybe later add with "clean" parameter
 #if [ -d "${BUILD_DIR}" ]; then
@@ -42,7 +27,19 @@ echo $VERSION >${BUILD_DIR}/build-version.txt
 # this may be needed, if we run from "appdir" during development
 echo $VERSION >build-version.txt
 
-echo $QT_DIR >${BUILD_DIR}/qt-dir.txt
+QMAKE_BINARY=$(which qmake)
+if [ -z "${QMAKE_BINARY}" ]; then
+    echo qmake not found!
+    exit 1
+fi
+if [ ! -f "${QMAKE_BINARY}" ]; then
+    echo "qmake binary (${QMAKE_BINARY}) not found!"
+    exit 1
+fi
+
+
+
+echo $QMAKE_BINARY >${BUILD_DIR}/qt-dir.txt
 echo "${BUILD_DIR}">_build_dir_.txt
 echo Building version: ${VERSION}
 
@@ -52,12 +49,7 @@ if [ -d "${APPDIR}" ]; then
 fi
 
 
-QMAKE_BINARY=${QT_DIR}/bin/qmake
 
-if [ ! -f "${QMAKE_BINARY}" ]; then
-    echo "qmake binary (${QMAKE_BINARY}) not found!"
-    exit 1
-fi
 
 
 PREFIX_DIR=$APPDIR/usr
