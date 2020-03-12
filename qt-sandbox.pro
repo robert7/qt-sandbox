@@ -66,9 +66,10 @@ mac {
     message("macOS" specific build! TARGET=$${TARGET} PREFIX=$${PREFIX})
     # we go for an appbundle that contains all resources (except
     # the shared library dependencies - use macdeployqt for those).
-    images.path = $${PREFIX}/Contents/Resources
+    images.path = Contents/Resources
     images.files = images
-    INSTALLS += images
+
+    QMAKE_BUNDLE_DATA += images
 } else {
     ## message(not a "macOS" specific build!)
     INSTALLS += images icons binary desktop man
