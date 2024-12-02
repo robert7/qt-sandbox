@@ -2,9 +2,7 @@
 Qt playground - tutorial/example/introductory experiments with Qt framework,
 qmake and cmake build systems, AppImage & debian packaging.
 
-There is no really useful C++ code inside just the build/packaging logic.
-
-Travis CI [![Build Status](https://travis-ci.com/robert7/qt-sandbox.svg?branch=master)](https://travis-ci.com/robert7/qt-sandbox)
+There is no beneficial C++ code inside just the build/packaging logic.
 
 ## Linux: build with qmake
 Goto project directory
