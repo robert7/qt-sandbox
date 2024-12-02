@@ -33,3 +33,7 @@ Build binary: `./development/build-with-cmake.sh /usr`
 
 Binary is currently created in cmake-build-debug directory. At this time only
 "debug" build is configured.
+
+
+## Test sandbox changes
+Random change for versioning test.
