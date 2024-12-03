@@ -1,5 +1,12 @@
 # CHANGELOG: Release
 
+# [1.4.0-staging.3](https://github.com/robert7/qt-sandbox/compare/v1.4.0-staging.2...v1.4.0-staging.3) (2024-12-03)
+
+
+### Features
+
+* **XX-129:** Feature XY ([#7](https://github.com/robert7/qt-sandbox/issues/7)) ([530c07c](https://github.com/robert7/qt-sandbox/commit/530c07c1b39de9b1e89a16c99dc9eb6925b40e25))
+
 # [1.4.0-staging.2](https://github.com/robert7/qt-sandbox/compare/v1.4.0-staging.1...v1.4.0-staging.2) (2024-12-03)
 
 
