@@ -37,3 +37,4 @@ Binary is currently created in cmake-build-debug directory. At this time only
 Random change for versioning test.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus.
+Curabitur nec nunc nec nunc. Nullam nec purus. Curabitur nec nunc nec nunc.
