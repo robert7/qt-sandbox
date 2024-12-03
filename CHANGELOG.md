@@ -1,5 +1,12 @@
 # CHANGELOG: Release
 
+# [1.3.0](https://github.com/robert7/qt-sandbox/compare/v1.2.0...v1.3.0) (2024-12-03)
+
+
+### Features
+
+* **XX-126:** Improved semantic release configuration ([#4](https://github.com/robert7/qt-sandbox/issues/4)) ([490f202](https://github.com/robert7/qt-sandbox/commit/490f202b84606b7e4f5b3e03bf14e8b3af95fa49))
+
 # [1.2.0-staging.2](https://github.com/robert7/qt-sandbox/compare/v1.2.0-staging.1...v1.2.0-staging.2) (2024-12-03)
 
 
@@ -7,7 +14,8 @@
 
 * **XX-126:** Improved semantic release configuration ([#4](https://github.com/robert7/qt-sandbox/issues/4)) ([490f202](https://github.com/robert7/qt-sandbox/commit/490f202b84606b7e4f5b3e03bf14e8b3af95fa49))
 
-# [1.2.0](https://github.com/robert7/qt-sandbox/compare/v1.1.0...v1.2.0) (2024-12-03)
+
+# [1.2.0-staging.1](https://github.com/robert7/qt-sandbox/compare/v1.1.0...v1.2.0-staging.1) (2024-12-03)
 
 
 ### Features
@@ -15,8 +23,7 @@
 * **XX-125:** Change in README ([b510afb](https://github.com/robert7/qt-sandbox/commit/b510afb80fe741cc238d9fcc4d9b4d8552db2eb0))
 * **XX-125:** Finished sample feature ([564e251](https://github.com/robert7/qt-sandbox/commit/564e251c96a0f7b09da5f77121b84512b6f7163a))
 
-# [1.2.0-staging.1](https://github.com/robert7/qt-sandbox/compare/v1.1.0...v1.2.0-staging.1) (2024-12-03)
-
+# [1.2.0](https://github.com/robert7/qt-sandbox/compare/v1.1.0...v1.2.0) (2024-12-03)
 
 ### Features
 
