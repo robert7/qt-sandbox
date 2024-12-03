@@ -1,5 +1,12 @@
 # CHANGELOG: Release
 
+# [1.4.0-staging.2](https://github.com/robert7/qt-sandbox/compare/v1.4.0-staging.1...v1.4.0-staging.2) (2024-12-03)
+
+
+### Features
+
+* **XX-122:** Removed version.txt ([#6](https://github.com/robert7/qt-sandbox/issues/6)) ([c9d6956](https://github.com/robert7/qt-sandbox/commit/c9d6956d97e3ea38df2ec73ed7ff778b30b60ca4))
+
 # [1.4.0-staging.1](https://github.com/robert7/qt-sandbox/compare/v1.3.0...v1.4.0-staging.1) (2024-12-03)
 
 
