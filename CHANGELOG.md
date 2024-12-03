@@ -1,5 +1,13 @@
 # CHANGELOG: Release
 
+# [1.2.0-staging.1](https://github.com/robert7/qt-sandbox/compare/v1.1.0...v1.2.0-staging.1) (2024-12-03)
+
+
+### Features
+
+* **XX-125:** Change in README ([b510afb](https://github.com/robert7/qt-sandbox/commit/b510afb80fe741cc238d9fcc4d9b4d8552db2eb0))
+* **XX-125:** Finished sample feature ([564e251](https://github.com/robert7/qt-sandbox/commit/564e251c96a0f7b09da5f77121b84512b6f7163a))
+
 # [1.1.0](https://github.com/robert7/qt-sandbox/compare/v1.0.0...v1.1.0) (2024-12-03)
 
 
