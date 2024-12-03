@@ -1,5 +1,12 @@
 # CHANGELOG: Release
 
+# [1.4.0-staging.1](https://github.com/robert7/qt-sandbox/compare/v1.3.0...v1.4.0-staging.1) (2024-12-03)
+
+
+### Features
+
+* **XX-128:** Alfa feature ([#5](https://github.com/robert7/qt-sandbox/issues/5)) ([fc23f07](https://github.com/robert7/qt-sandbox/commit/fc23f074ff448dd1b72a6d48c9737ddbc13a91a5)), closes [#4](https://github.com/robert7/qt-sandbox/issues/4)
+
 # [1.2.0-staging.3](https://github.com/robert7/qt-sandbox/compare/v1.2.0-staging.2...v1.2.0-staging.3) (2024-12-03)
 
 
